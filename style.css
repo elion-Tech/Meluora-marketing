@@ -219,7 +219,13 @@ body {
 }
 
 @media (min-width: 992px) {
-    .project-card.wide { grid-column: span 2; }
+    .project-card.wide { 
+        grid-column: 1 / -1; 
+        justify-self: center;
+        width: 100%;
+        max-width: 1000px;
+        text-align: center;
+    }
 }
 
 .project-card { 
@@ -298,5 +304,10 @@ h3 {
     .grid-container, #motion .grid-container { 
         gap: 1.5rem; 
         grid-template-columns: 1fr; /* Stack vertically on small phones */
+    }
+
+    /* Fix: Prevents Google Drive player controls from obstructing landscape video on mobile */
+    .ugc-grid .project-card.wide .media-box {
+        aspect-ratio: 4 / 3;
     }
 }
