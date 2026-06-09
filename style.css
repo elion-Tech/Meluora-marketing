@@ -306,8 +306,13 @@ h3 {
         grid-template-columns: 1fr; /* Stack vertically on small phones */
     }
 
-    /* Fix: Prevents Google Drive player controls from obstructing landscape video on mobile */
-    .ugc-grid .project-card.wide .media-box {
-        aspect-ratio: 4 / 3;
+    /* Fix: Zoom and Crop landscape iframes to hide Google Drive UI bars (title/controls) on mobile */
+    .media-box:not(.vertical) iframe {
+        height: 150% !important; 
+        width: 105% !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
