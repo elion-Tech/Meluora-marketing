@@ -113,15 +113,69 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(43, 43, 43, 0.7) 100%);
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.9) 100%);
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 0 5%;
+    z-index: 10;
+}
+
+.hero-badge {
+    color: var(--meluora-green);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .hero-content h1 {
     font-family: 'Outfit', sans-serif;
     font-size: clamp(2.5rem, 8vw, 5rem);
-    line-height: 0.9;
+    line-height: 1.1;
     font-weight: 700;
     margin-bottom: 2rem;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-content .highlight {
+    color: var(--meluora-green);
+    text-shadow: 0 0 20px rgba(124, 193, 66, 0.3);
+}
+
+.hero-content p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hero-content p strong {
+    color: var(--white);
+    border-bottom: 2px solid var(--meluora-green);
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--meluora-green);
+    color: var(--white);
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 20px rgba(124, 193, 66, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(124, 193, 66, 0.4);
+    filter: brightness(1.1);
 }
 
 .portfolio-grid { padding: 6rem 5%; }
