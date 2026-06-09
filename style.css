@@ -44,9 +44,47 @@ body {
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
+/* Mobile Nav Toggle Icon */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--white);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+/* Hamburger to X Animation */
+.nav-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
 @media (max-width: 768px) {
-    .nav-links { gap: 1.5rem; }
-    .nav-links li:not(:last-child) { display: none; } /* Simplify mobile nav */
+    .nav-toggle { display: flex; }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--deep-charcoal);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem !important;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active { right: 0; }
 }
 
 .logo {
