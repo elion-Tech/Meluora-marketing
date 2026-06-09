@@ -220,11 +220,7 @@ body {
 
 @media (min-width: 992px) {
     .project-card.wide { 
-        grid-column: 1 / -1; 
-        justify-self: center;
-        width: 100%;
-        max-width: 1000px;
-        text-align: center;
+        grid-column: span 2; 
     }
 }
 
